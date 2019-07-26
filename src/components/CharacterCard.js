@@ -1,5 +1,6 @@
 import React from 'react'
-import {Card, CardText, Image} from "./StyledWidgets";
+import {Card, CardText, Image, SubText,Title,Text} from "./StyledWidgets";
+import { Icon } from 'semantic-ui-react'
 
 export default function CharacterCard(props) {
   const {image,name,species,status,location, origin} = props;
@@ -7,12 +8,14 @@ export default function CharacterCard(props) {
     <Card className = "character-card">
       <Image src={image} alt={name}/>
       <CardText>
-        <h2>{name}</h2>
+        <Title>{name}</Title>
         <div className="species-status">
-          <p>{species} {status}</p>
+          <SubText>{species} {status}</SubText>
         </div>
-        <p>Location: {location.name}</p>
-        <p>Origin: {origin.name}</p>
+        <Text>Location: {location.name}</Text>
+        <Text>Origin: {origin.name}</Text>
+        <br></br>
+        <SubText><span><Icon name="user"/></span>Episodes</SubText>
       </CardText>
     </Card>
   )
