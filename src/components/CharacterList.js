@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import CharacterCard from './CharacterCard'
 
 export default function CharacterList() {
   // TODO: Add useState to track data from useEffect
@@ -27,23 +28,23 @@ export default function CharacterList() {
 
   return (
     <section className='character-list grid-view'>
-       <h2>{characterList.map(character => (
-         <CharacterDetails key = {character.id}  character = {character} />
-       ))}
-       </h2>
+      {characterList.map(character => {
+        return (
+            <Link to = {`/characters/${character.id}`}>
+              <CharacterCard 
+              character = {character}
+              key = {character.id}
+              image = {character.image}
+              name = {character.name}
+              species = {character.species}
+              status = {character.status}
+              location = {character.location}
+              origin = {character.origin}
+              />
+            </Link>
+        )
+      })}
     </section>
   )
 
-}
-
-function CharacterDetails({character}) {
-  const {name, status, species} = character;
-  return (
-    <div className="character-card">
-      <Link to = {`/characters/${character.id}`}><h2>{name}</h2></Link>
-      <div className="species-status">
-        <p>{species} {status}</p>
-      </div>
-    </div>
-  )
 }
