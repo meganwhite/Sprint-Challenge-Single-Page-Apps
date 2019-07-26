@@ -33,3 +33,13 @@ export const Title = styled.h2`
 export const Text = styled.p`
     margin: 0;
 `
+export const ResidentBox = styled.div`
+    background-color: #cfcccc;
+    width: 40%;
+    padding: 1rem;
+    margin-left: 209px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+`

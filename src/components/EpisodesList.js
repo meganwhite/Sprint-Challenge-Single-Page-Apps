@@ -34,6 +34,7 @@ export default function EpisodeList() {
               <EpisodeCard 
               episode = {episode}
               key = {episode.id}
+              name = {episode.name}
               airDate = {episode.air_date}
               episodeCode = {episode.episode}
               characters = {episode.characters}
